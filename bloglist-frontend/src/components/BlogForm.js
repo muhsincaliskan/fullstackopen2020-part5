@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-const BlogForm = ({ createBlog,user }) => {
+const BlogForm = ({ createBlog, user }) => {
 
   const [newTitle, setNewTitle] = useState('')
   const [newAuthor, setNewAuthor] = useState('')
@@ -18,7 +18,7 @@ const BlogForm = ({ createBlog,user }) => {
   const addBlog = (event) => {
     event.preventDefault()
     createBlog({
-      user: { id:user.id,username:user.username },
+      user: { id: user.id, username: user.username },
       title: newTitle,
       author: newAuthor,
       url: newUrl,
@@ -32,22 +32,25 @@ const BlogForm = ({ createBlog,user }) => {
   }
   return (
     <div>
-      <h2>Create a new blog</h2>
-      <form onSubmit={addBlog}>
+      <form onSubmit={addBlog} className='formDiv'>
+        <h2>Create a new blog</h2>
         <div>Title:
           <input
+            id="title"
             value={newTitle}
             onChange={handleTitleChange}
           />
         </div>
         <div> Author:
           <input
+            id="author"
             value={newAuthor}
             onChange={handleAuthorChange}
           />
         </div>
         <div>Url:
           <input
+            id="url"
             value={newUrl}
             onChange={handleUrlChange}
           />
