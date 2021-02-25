@@ -19,10 +19,10 @@ const Blog = ({ blog, handleDelete, handleLike }) => {
       <Togglable buttonLabel="View" >
 
         <p>{blog.url}</p>
-        <p> likes {blog.likes} <button onClick={() => handleLike(blog.id)} >Like</button></p>
+        <p> likes {blog.likes} <button id="like-button" onClick={() => handleLike(blog.id)} >Like</button></p>
 
       </Togglable>
-      <button type="submit" onClick={() => handleDelete(blog)} >Remove</button>
+      <button id="delete-button" type="submit" onClick={() => handleDelete(blog)} >Remove</button>
     </div>
   )
 }

@@ -82,10 +82,11 @@ const App = () => {
       )
       setUser(user)
       blogService.setToken(user.token)
+      errorHandler('success','Login Successful')
       setUsername('')
       setPassword('')
     } catch (exception) {
-      errorHandler('error', 'wrong credentials')
+      errorHandler('error', 'Wrong Credentials')
     }
   }
   const handleLogout = async (event) => {
